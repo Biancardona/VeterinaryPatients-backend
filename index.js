@@ -30,7 +30,11 @@ const corsOptions = {
   },
 };
 //Allow express use CorsOptions
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: '*',
+  }),
+);
 //Cuando se escriba la url api/veteri... se va a mandar llamar la ruta veterinarianRoutes que esta importada de routes
 app.use("/api/veterinarians", veterinarianRoutes);
 app.use("/api/patients", patientsRoutes);
